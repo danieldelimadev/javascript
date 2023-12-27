@@ -28,27 +28,27 @@ function handleSymbol(symbol){
             buffer = runningTotal;
             runningTotal = 0;
             break;
-        case '<-':
+        case '🠔':
             if(buffer.length ===1){
                 buffer = '0';
             }else{
-                buffer = buffer.toString(0, buffer.length - 1);
+                buffer = buffer.substring(0, buffer.length - 1);
             }
             break;
         case '+':
         case '-':
-        case '×':
-        case '÷':
-            handlemath(symbol);
+        case 'X':
+        case '/':
+            handleMath(symbol);
             break;
     }
 }
 
-function handlemath(symbol){
+function handleMath(symbol){
     if(buffer === '0'){
         return;
     }
-    const intbuffer = parseint(buffer);
+    const intbuffer = parseInt(buffer);
 
     if(runningTotal === 0){
         runningTotal = intbuffer;
@@ -64,9 +64,9 @@ function flushOperation(intBuffer){
         runningTotal += intBuffer;
     }else if(previousOperator === '-'){
         runningTotal -= intBuffer;
-    }else if(previousOperator === '×'){
+    }else if(previousOperator === 'X'){
         runningTotal *= intBuffer
-    }else if(previousOperator === "÷"){
+    }else if(previousOperator === "/"){
         runningTotal /= intBuffer;
     }
 }
