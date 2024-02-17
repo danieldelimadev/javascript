@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAIS</title>
+    <style>
+        div#res{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brasileiro ou Estrangeiro?</h1>
+    <p>Seu pais: <input type="text" id="txtpais"></p>
+    <input type="button" value="VERIFICAR" onclick="verify()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verify(){
+            var pais = document.getElementById('txtpais')
+            var res = document.getElementById('res')
+            if(pais.value == 'BRA'){
+                res.innerHTML = 'Você é brasileiro.' 
+            }else{
+                res.innerHTML = 'Você é estrangeiro.'
+            }
+        }
+    </script>
+</body>
+</html>
