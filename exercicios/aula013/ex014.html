@@ -7,6 +7,7 @@
     <style>
         *{
             text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body{
@@ -16,7 +17,6 @@
             justify-content: center;
             
         }
-
         
         div { 
             width: 500px;
@@ -39,10 +39,24 @@
 <body>
     <article>
         <h1>Hora do Dia</h1>
-        <div>
-            
+        <div id="som">
+        
         </div>
         <footer>Daniel Santos</footer>
     </article>
+    <script>
+        var now = new Date
+        var hour = now.getHours()
+        var inter = document.getElementById('som')
+        inter.innerHTML += `<p>Agora são <strong>${hour}</strong> horas.</p>`
+        if (hour < 12) {
+            inter.innerHTML += '<img src="amanhecer.png" alt="Amanhecer">'
+        } else if (hour <= 18) {
+            inter.innerHTML += '<img src="entardecer.png" alt="Entardecer">'
+        } else if (hour > 18) {
+            inter.innerHTML += '<img src="anoitecer.png" alt="Anoitecer">'
+        }
+        
+    </script>
 </body>
 </html>
