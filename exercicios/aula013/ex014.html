@@ -11,11 +11,10 @@
         }
 
         body{
-            background-color: green;
             display: flex;
             align-items: center;
             justify-content: center;
-            
+            background-color: rgb(245, 185, 75);
         }
         
         div { 
@@ -36,25 +35,29 @@
         }
     </style>
 </head>
-<body>
-    <article>
+<body id="back">
+    <section>
         <h1>Hora do Dia</h1>
         <div id="som">
         
         </div>
         <footer>Daniel Santos</footer>
-    </article>
+    </section>
     <script>
         var now = new Date
         var hour = now.getHours()
+        var back = document.getElementById('back')
         var inter = document.getElementById('som')
         inter.innerHTML += `<p>Agora são <strong>${hour}</strong> horas.</p>`
         if (hour < 12) {
             inter.innerHTML += '<img src="amanhecer.png" alt="Amanhecer">'
+            back.style.background = 'rgb(207, 207, 143)'
         } else if (hour <= 18) {
             inter.innerHTML += '<img src="entardecer.png" alt="Entardecer">'
+            back.style.background = 'rgb(245, 185, 75)'
         } else if (hour > 18) {
             inter.innerHTML += '<img src="anoitecer.png" alt="Anoitecer">'
+            back.style.background = 'rgb(56, 53, 53)'
         }
         
     </script>
