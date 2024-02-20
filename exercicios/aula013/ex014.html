@@ -5,59 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hora do Dia</title>
     <style>
-        *{
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
+        body {
+            background-color: rgb(12, 174, 238);
+            font: normal 15pt arial;     
         }
 
-        body{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(245, 185, 75);
+        header {
+            color: white;
+            text-align: center;
+        }
+
+        section {
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 500px;
+            box-shadow:2px 3px 8px 0px;
+        }
+
+        div {
+            text-align: center;
         }
         
-        div { 
-            width: 500px;
-            height: 350px;
-            border-radius: 10px;
-            background-color: white;
-        }
-
-        h1{
-            font: normal 30pt arial; 
-            color: white;
-        }
-
         footer {
-            margin-top: 10px;
             color: white;
+            text-align: center;
+            font-style: italic;
         }
     </style>
 </head>
-<body id="back">
-    <section>
+<body>
+    <header>
         <h1>Hora do Dia</h1>
-        <div id="som">
-        
+    </header>
+    <section>
+        <div id="msg">
+            
         </div>
-        <footer>Daniel Santos</footer>
+        <div id="foto">
+
+        </div>
     </section>
+    <footer>
+        <p>&copy; Daniel Santos</p>
+    </footer>
     <script>
         var now = new Date
         var hour = now.getHours()
-        var back = document.getElementById('back')
-        var inter = document.getElementById('som')
-        inter.innerHTML += `<p>Agora são <strong>${hour}</strong> horas.</p>`
+        var msg = document.getElementById('msg')
+        var foto = document.getElementById('foto')
+        msg.innerHTML = `<p>Agora são <strong>${hour}</strong> horas.</p>`
         if (hour < 12) {
-            inter.innerHTML += '<img src="amanhecer.png" alt="Amanhecer">'
-            back.style.background = 'rgb(207, 207, 143)'
+            foto.innerHTML = '<img src="amanhecer.png" alt="Amanhecer">'
+            document.body.style.background = 'rgb(207, 207, 143)'
         } else if (hour <= 18) {
-            inter.innerHTML += '<img src="entardecer.png" alt="Entardecer">'
-            back.style.background = 'rgb(245, 185, 75)'
+            foto.innerHTML = '<img src="entardecer.png" alt="Entardecer">'
+            document.body.style.background = 'rgb(245, 185, 75)'
         } else if (hour > 18) {
-            inter.innerHTML += '<img src="anoitecer.png" alt="Anoitecer">'
-            back.style.background = 'rgb(56, 53, 53)'
+            foto.innerHTML = '<img src="anoitecer.png" alt="Anoitecer">'
+            document.body.style.background = 'rgb(56, 53, 53)'
         }
         
     </script>
