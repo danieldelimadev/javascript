@@ -1,0 +1,18 @@
+/*
+var c = 1
+while (c <= 6) {
+    console.log(`passo ${c}`)
+    c++
+}
+*/
+/*
+var c = 1
+do {
+    console.log(`passo ${c}`)
+    c++
+} while (c <= 6)
+*/
+
+for (c = 1; c <= 10; c+=2) {
+    console.log (`Passo ${c}`)
+}
