@@ -8,6 +8,10 @@ header {
     text-align: center;
 }
 
+div#res {
+    text-align: center;
+}
+
 section {
     margin: auto;
     background-color: white;
