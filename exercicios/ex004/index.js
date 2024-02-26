@@ -3,9 +3,9 @@ function check() {
     var end = document.getElementById('etxt')       
     var pass = document.getElementById('ptxt')
     var res = document.getElementById('res') 
-    var c = Number(start.value)
-    var e = Number(end.value)
-    var p = Number(pass.value)
+    var c = parseInt(start.value)
+    var e = parseInt(end.value)
+    var p = parseInt(pass.value)
     if (start.value == '' || end.value == ''){
         res.innerHTML = '<p></p>'
         res.innerHTML += 'Impossivel contar!'
@@ -17,9 +17,9 @@ function check() {
         }
         res.innerHTML = '<p></p>'
         for (c ; c <= e ; c += p) {
-        res.innerHTML += `${c} -> `
+        res.innerHTML += `${c} 👉 `
         }
-        res.innerHTML += 'FIM'
+        res.innerHTML += '🏁'
     } else {
         //Contagem regresiva
         if (p < 0) {
@@ -31,8 +31,8 @@ function check() {
         }
         res.innerHTML = '<p></p>'
         for (c ; c >= e ; c -= p) {
-        res.innerHTML += `${c} -> `
+        res.innerHTML += `${c} 👉`
         }
-        res.innerHTML += 'FIM'
+        res.innerHTML += '🏁'
     }
 }
