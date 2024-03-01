@@ -18,3 +18,14 @@ const somar = function(arr) {
 
 somar(array)
 */
+let n = 'Fabio'
+let list = []
+let object = {
+    nome: 'José', idade: 18, peso:80
+}
+list.push(object)
+object = {
+    nome: n, idade: 19, peso: 60
+}
+list.push(object)
+console.log(typeof list)
