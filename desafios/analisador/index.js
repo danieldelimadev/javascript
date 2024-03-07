@@ -1,4 +1,5 @@
 var list = []
+let mulher = []
 
 function addpeople() {
     let name = document.getElementById('name')
@@ -17,6 +18,12 @@ function addpeople() {
         sexo: gender
     }
     list.push(people)
+    //nome mulheres cadastradas
+    for (c in list) {
+        if (list[c].sexo == 'F') {
+            mulher.push(list[c].nome)
+        }
+    }
 }
 
 function analyse() {
@@ -31,4 +38,5 @@ function analyse() {
     let med = sum / list.length
     res.innerHTML += `<p>Foram adicionadas ${list.length} pessoas</p>`
     res.innerHTML += `<p>A média de idade é ${med}</p>`
+    res.innerHTML += `<p>As mulheres cadastradas foram: ${mulher}</p>`
 }
